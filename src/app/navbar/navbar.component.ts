@@ -9,11 +9,11 @@ import {  Router, ActivatedRoute, RouterModule } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-	navigation : boolean;
+	navigation : string;
 
-  constructor(private route : Router, private activated : ActivatedRoute, private router : RouterModule) { 
-  	this.navigation = this.activated.url.value[0].path;
-  	  	console.log(this.navigation);
+  constructor(private activated : ActivatedRoute) { 
+  	this.navigation = this.activated.url.value[0] == undefined ? "" : this.activated.url.value[0].path;
+  	  
   }
 
   ngOnInit() {

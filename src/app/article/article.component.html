@@ -1,9 +1,11 @@
-<div class="card" style="width: 25rem;">
+<div class="card" style="width: 35rem;">
     <a [routerLink]="['/articles',this.article.id]"><h3 class="card-title"> {{this.article?.title}} </h3></a>
     <p class="card-text"> {{this.article?.content}} </p>
     <blockquote>Written by {{this.article?.authors}}</blockquote>
-    <a class="btn btn-info" [routerLink]="['/create',this.article.id]"> Modify</a>
-	<br>
-    <button class="btn btn-danger" (click)="delete()">Delete</button>
-    <br>
+    <div class="input-group-btn">
+	    <a class="btn btn-info btn-lg" [routerLink]="['/create',this.article.id]"> Modify</a>
+	    <button class="btn btn-danger btn-lg" (click)="delete()">Delete</button>
+    </div>
 </div>
+
+<div *ngIf="this.id"><a [routerLink]="['/articles']">Retour Accueil</a></div>

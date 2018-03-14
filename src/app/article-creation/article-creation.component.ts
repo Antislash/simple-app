@@ -34,7 +34,7 @@ export class ArticleCreationComponent implements OnInit {
       'authors' : ['', Validators.required ],
     });
     this.modification = false;
-    console.log(this.articleForm);
+    console.log(this.activatedRoute);
   	this.activatedRoute.params.subscribe( params => {
 		if (params && params['id']){
 

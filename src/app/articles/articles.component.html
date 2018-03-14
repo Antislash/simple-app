@@ -1,6 +1,10 @@
-<input type="text" name="search"  [value]="wordSearch" (input)="wordSearch = $event.target.value" placeholder="Search" >
+<app-navbar></app-navbar>
 <div class="container"> 
-	<div *ngFor="let article of this.articles() | async | filterArticle:this.getSearch() ">
-	  <app-article  [article]="article" (deletedArticle)="delete($event)"></app-article>
+			<input type="text" name="search"  [value]="wordSearch" (input)="wordSearch = $event.target.value" placeholder="Search" >
+	<div class="row">
+			<div>
+			<div  *ngFor="let article of this.articles() | async | filterArticle:this.wordSearch ">
+			  <app-article  [article]="article" (deletedArticle)="delete($event)"></app-article>
+		</div>
 	</div>
 </div>

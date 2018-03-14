@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {  Router, ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,12 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+	navigation : boolean;
+
+  constructor(private route : Router, private activated : ActivatedRoute, private router : RouterModule) { 
+  	this.navigation = this.activated.url.value[0].path;
+  	  	console.log(this.navigation);
+  }
 
   ngOnInit() {
   }

@@ -30,8 +30,4 @@ export class ArticlesComponent implements OnInit {
     	});
   	}
 
-  	getSearch(): string {
-    	return this.wordSearch
-  	}
-
 }

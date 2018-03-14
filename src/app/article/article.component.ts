@@ -17,10 +17,14 @@ export class ArticleComponent implements OnInit {
   	@Output()
 	deletedArticle : EventEmitter<Article> = new EventEmitter();
 
+  id : number;
+
     constructor(private route :ActivatedRoute, private articleService : ArticleService){
+      this.id = undefined;
     	this.route.params.subscribe( params => {
 			if (params && params['id']){
 				this.articleService.get(params['id']).subscribe(fetchedArticle => this.article = fetchedArticle);
+        this.id = params['id'];
 
 			}
 		});

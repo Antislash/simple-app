@@ -1,12 +1,6 @@
 {
   "articles": [
     {
-      "id": 0,
-      "title": "My First Article",
-      "content": "Hello World",
-      "authors": "Orangefire"
-    },
-    {
       "id": 1,
       "title": "Angular component",
       "content": "Angular component looks awesome!",
@@ -41,6 +35,12 @@
       "content": "sqcqs",
       "authors": "zave",
       "id": 6
+    },
+    {
+      "title": "Fake Title",
+      "content": "ebzebr",
+      "authors": "zegez",
+      "id": 7
     }
   ]
 }

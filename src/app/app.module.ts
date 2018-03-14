@@ -10,6 +10,7 @@ import { ArticleCreationComponent } from './article-creation/article-creation.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FilterArticlePipe } from './filters/filter-article.pipe';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     ArticleComponent,
     ArticlesComponent,
     ArticleCreationComponent,
-    NavbarComponent
+    NavbarComponent,
+    FilterArticlePipe
   ],
   imports: [
     RouterModule.forRoot(

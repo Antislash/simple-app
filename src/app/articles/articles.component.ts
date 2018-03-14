@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ArticleService} from "../services/article.service";
 import { Article } from '../models/article';
 import {Observable} from "rxjs/Observable";
-import {Pipe}
 
 @Component({
   selector: 'app-articles',
@@ -12,6 +11,7 @@ import {Pipe}
 export class ArticlesComponent implements OnInit {
 
 	private _articles : Observable<Article[]>;
+	wordSearch : string;
   	constructor(private articleService: ArticleService) {
 	}
 
@@ -21,12 +21,17 @@ export class ArticlesComponent implements OnInit {
 
 	ngOnInit() {
 		this._articles = this.articleService.getArticles();
+		this.wordSearch = "";
 	}
 
 	delete(article: Article){
 		this.articleService.delete(article.id).subscribe(()=>{
 			this._articles = this.articleService.getArticles();
     	});
+  	}
+
+  	getSearch(): string {
+    	return this.wordSearch
   	}
 
 }

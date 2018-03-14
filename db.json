@@ -1,10 +1,10 @@
 {
   "articles": [
     {
+      "id": 0,
       "title": "My First Article",
       "content": "Hello World",
-      "authors": "Orangefire",
-      "id": 0
+      "authors": "Orangefire"
     },
     {
       "id": 1,

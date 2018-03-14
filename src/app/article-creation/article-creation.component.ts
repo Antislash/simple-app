@@ -54,8 +54,6 @@ export class ArticleCreationComponent implements OnInit {
 
 		}
 	});
-
-    console.log("modification=" + this.modification " et article= " + this.article);
   }
 
   actionArticle() {
@@ -80,13 +78,12 @@ export class ArticleCreationComponent implements OnInit {
 
   updateArticle(){
 	const formModel = this.articleForm.value;
-		const rawArticle : RawArticle = {
-		  title : formModel.title,
-		  content : formModel.content,
-		  authors : formModel.authors
-		}
 
-  	this.articleService.put(this.article.id, rawArticle).subscribe(()=>{
+	this.article.title = formModel.title;
+	this.article.content = formModel.content;
+	this.article.authors = formModel.authors
+
+  	this.articleService.put(this.article.id, this.article).subscribe(()=>{
 		this.router.navigate(['/articles/' + this.article.id]);
 	});
   }

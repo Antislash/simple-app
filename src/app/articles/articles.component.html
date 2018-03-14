@@ -1,6 +1,6 @@
-<input type="text" name="search" placeholder="Search" />
+<input type="text" name="search"  [value]="wordSearch" (input)="wordSearch = $event.target.value" placeholder="Search" >
 <div class="container"> 
-	<div *ngFor="let article of this.articles() | async ">
+	<div *ngFor="let article of this.articles() | async | filterArticle:this.getSearch() ">
 	  <app-article  [article]="article" (deletedArticle)="delete($event)"></app-article>
 	</div>
 </div>

@@ -1,0 +1,9 @@
+<div class="card" style="width: 25rem;">
+    <a [routerLink]="['/articles',this.article.id]"><h3 class="card-title"> {{this.article?.title}} </h3></a>
+    <p class="card-text"> {{this.article?.content}} </p>
+    <blockquote>Written by {{this.article?.authors}}</blockquote>
+    <a class="btn btn-info" [routerLink]="['/create',this.article.id]"> Modify</a>
+	<br>
+    <button class="btn btn-danger" (click)="delete()">Delete</button>
+    <br>
+</div>
